@@ -1,4 +1,4 @@
-name: cs-strapi cms to Azure Web App - collapse-survivor-cms-webapp-dev
+name: cs-strapi cms to Azure Web App - collapse-survivor-cms-webapp-staging
 
 on:
   workflow_dispatch:
@@ -25,6 +25,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
+          npm install strapi-provider-upload-azure-storage
           npm run build --if-present
           npm run test --if-present
 
